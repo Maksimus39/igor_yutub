@@ -96,18 +96,18 @@ function App() {
     console.log(array)
     return (
         <div className="App">
-            <div>Hello Max</div>
-            <div>Hello Max</div>
-            <h1>Lesson IT</h1>
-
-            {array.map((ar) => (
-                <div key={ar.id}>
-                    <h3>{ar.title}</h3>
-                    <a href={ar.url} target='_blank' rel='noopener noreferrer'>
-                        <img src={ar.thumbnailUrl} alt={ar.title}/>
-                    </a>
-                </div>
-            ))}
+            {array.map(el => {
+                debugger
+                return (
+                    <li style={{backgroundColor: 'aqua'}}>
+                        <h4>albumID: {el.albumId}</h4>
+                        <h5>Id: {el.id}</h5>
+                        <h5>{el.title}</h5>
+                        <div><img src={el.thumbnailUrl} alt="Placeholder Image"/></div>
+                        <div><a href={el.url} target="_blank">Click here to view the image</a></div>
+                    </li>
+                )
+            })}
         </div>
     );
 }
